@@ -31,8 +31,9 @@ function App() {
       isInitial = false;
       return;
     }
+    console.log("one");
     dispatch(getCourseList());
-
+    console.log("two");
   },[dispatch]);
 
   const changeTheme = () => {
