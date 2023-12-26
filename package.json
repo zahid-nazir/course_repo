@@ -1,4 +1,5 @@
 {
+  "proxy": "https://rboc0pd24a.execute-api.us-east-1.amazonaws.com/Prod",
   "name": "company-app",
   "version": "0.1.0",
   "private": true,
