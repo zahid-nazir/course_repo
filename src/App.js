@@ -19,21 +19,13 @@ export const themes = {
 
 export const ThemeContext = createContext();
 
-let isInitial = true;
-
 function App() {
   const dispatch = useDispatch();
   const [theme, setTheme] = useState(themes.dark);
   const [themeToggle, setThemeToggle] = useState('dark');
 
   useEffect(() => {
-    if(isInitial) {
-      isInitial = false;
-      return;
-    }
-    console.log("one");
     dispatch(getCourseList());
-    console.log("two");
   },[dispatch]);
 
   const changeTheme = () => {
