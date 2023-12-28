@@ -27,8 +27,7 @@ export default function CourseForm(props)
         } else {
             try {
                 const response = await saveCourse(course);
-                console.log("Response = ",response);
-                if(response.status === 200) {
+                if(response.status === 201) {
                     const { id, name, author, tags} = response.data;
                     dispatch(courseActions.add({id: id, name: name, author: author, tags: tags}));
                     props.showList();
@@ -49,7 +48,7 @@ export default function CourseForm(props)
                         {props.course.id && <div className="row mb-3">
                             <label className="col-sm-4 col-form-label">ID</label>
                             <div className="col-sm-8">
-                                <input readOnly className="form-control-plaintext" type="text" name="name" defaultValue={props.course.id} required />
+                                <input readOnly className="form-control-plaintext" type="text" name="course_id" defaultValue={props.course.id} required />
                             </div>
                         </div>}
                         <div className="row mb-3">

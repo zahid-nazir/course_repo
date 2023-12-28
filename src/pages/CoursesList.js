@@ -12,7 +12,6 @@ export default function CoursesList(props)
     // const  [error, setError] = useState('');
     // const dispatch = useDispatch();
     const courses = useSelector((state) => state.courses.courses);
-    
     // async function fetchCourses()
     // {
 

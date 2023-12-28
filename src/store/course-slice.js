@@ -15,14 +15,13 @@ const courseSlice = createSlice({
             });
         },
         add(state, action) {
-            console.log(action.payload);
             state.courses.push(action.payload);
         },
         update(state, action) {
             const { id } = action.payload;
-            const { name, author, tags } = action.payload.course;
+            const { c_name, author, tags } = action.payload.course;
             const courseObj = state.courses.find(course => course.id === id);
-            courseObj.name = name;
+            courseObj.name = c_name;
             courseObj.author = author;
             courseObj.tags = tags;
         },

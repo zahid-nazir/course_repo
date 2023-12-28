@@ -41,7 +41,7 @@ export default function CourseList(props)
                         <td>{course.tags}</td>
                         <td style={{whiteSpace: "nowrap"}}>
                             <CourseButton type="button" className="btn btn-primary btn-sm me-2" onClick={() => props.showForm(course)}>Edit</CourseButton>
-                            <CourseButton type="button" className="btn btn-danger btn-sm me-2" onClick={() => deleteCourses(course._id)}>Delete</CourseButton>
+                            <CourseButton type="button" className="btn btn-danger btn-sm me-2" onClick={() => deleteCourses(course.id)}>Delete</CourseButton>
                         </td>
                     </tr>
                 );

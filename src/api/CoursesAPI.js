@@ -7,8 +7,7 @@ import { http } from "../http-common";
 export const getCourses = async () => {
 
     try {
-        const response = await http.get('/');
-        console.log(response);
+        const response = await http.get('/course');
         return response; 
     } catch (error) {
         return {message: "We could not connect to the backend services.",code:error.code};
@@ -22,7 +21,7 @@ export const getCourses = async () => {
  */
 export const saveCourse = async (course) => {
 
-  const response = await http.post('/', {
+  const response = await http.post('/course', {
                       c_name: course.c_name,
                       author: course.author,
                       tags: course.tags
@@ -38,8 +37,8 @@ export const saveCourse = async (course) => {
  */
 export const updateCourse = async(id, course) => {
 
-  const response = await http.put(`/courses/${id}`, {
-                            name: course.name,
+  const response = await http.patch(`/course/${id}`, {
+                            name: course.c_name,
                             author: course.author,
                             tags: course.tags
                           });
@@ -53,7 +52,7 @@ export const updateCourse = async(id, course) => {
  */
 export const deleteCourse = async(id) => {
 
-  const response = await http.delete(`/courses/${id}`);
+  const response = await http.delete(`/course/${id}`);
 
   return response;
 }
